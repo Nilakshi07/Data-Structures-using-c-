@@ -1,0 +1,156 @@
+BFS ans DFS Traversal.
+
+ BFS->GRAPH
+ #include<iostream>
+// #include<stdlib.h>
+// using namespace std;
+// int a[10][10],q[10],visit[10],visited[10],i,j,k,n,v,f=0,r=0;
+// int main(){
+//     int m;
+//     cout<<"enter the number of vertices:"<<endl;
+//     cin>>n;
+//     cout<<"enter the number of edges:"<<endl;
+//     cin>>m;
+//     cout<<"\nEdges:\n"<<endl;
+//     for(k=1;k<=m;k++){
+//         cin>>i>>j;
+//         a[i][j]=1;
+//     }
+//     cout<<"enter the initial vertex:"<<endl;
+//     cin>>v;
+//     cout<<"visited vertices:"<<endl;
+//     cout<<v<<endl;
+//     visited[v]=1;
+//     k=1;
+//     while(k<n){
+//         for(j=1;j<=n;j++){
+//             if(a[v][j]!=0 && visited[j]!=1 && visit[j]!=1){
+//                 visit[j]=1;
+//                 q[r++]=j;
+//             }
+//         }
+//         v=q[f++];
+//         cout<<v<<" ";
+//         k++;
+//         visit[v]=0;
+//         visited[v]=1;
+//     }
+//     return 0;
+// }
+//*******************************************
+//BFS->GRAPH(If you want to print all the visited vertices in one row)
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+int cost[10][10], i, j, k, n, queue[10], front = 0, rear = 0, v;
+int visit[10], visited[10], visitedVertices[10]; // Added an array to store visited vertices
+
+int main() {
+    int m;
+    cout << "Enter the number of vertices: ";
+    cin >> n;
+    cout << "Enter the number of edges: ";
+    cin >> m;
+    cout << "\nEdges \n";
+    for (k = 1; k <= m; k++) {
+        cin >> i >> j;
+        cost[i][j] = 1;
+    }
+    cout << "Enter the initial vertex: ";
+    cin >> v;
+    cout << "Visited vertices\n";
+    cout << v << endl;
+    visited[v] = 1;
+    visitedVertices[0] = v; // Store the initial vertex
+    k = 1;
+    while (k < n) {
+        for (j = 1; j <= n; j++) {
+            if (cost[v][j] != 0 && visited[j] != 1 && visit[j] != 1) {
+                visit[j] = 1;
+                queue[rear++] = j;
+                visitedVertices[k++] = j; // Store visited vertices
+            }
+        }
+        v = queue[front++];
+        //cout<<v << " ";
+        visit[v] = 0;
+        visited[v] = 1;
+    }
+
+    // Print all visited vertices in one row
+    cout << "All visited vertices: ";
+    for (int i = 0; i < n; i++) {
+        cout << visitedVertices[i] << " ";
+    }
+
+    return 0;
+}
+
+//**********************************************************************************************************************************************
+//DFS->GRAPH
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+int cost[10][10],i,j,k,n,stack[10],top=0,v,visit[10],visited[10];
+int main()
+{
+	int m;
+	cout <<"enterno of vertices : ";
+	cin >> n;
+	cout <<"ente no of edges : ";
+	cin >> m;
+	cout <<"\nEdges \n";
+	for(k=1;k<=m;k++)
+	{
+		cin >>i>>j;
+		cost[i][j]=1;
+	}
+	cout <<"enter initial vertex : ";
+	cin >>v; // 3 2 4
+	cout <<"ORDER OF VISITED VERTICES"<<endl;
+	cout << v <<"-->";
+	visited[v]=1;
+	k=1;
+	while(k<n)
+	{
+		for(j=n;j>=1;j--)
+			if(cost[v][j]!=0 && visited[j]!=1 && visit[j]!=1)
+			{
+				visit[j]=1;
+				stack [top]=j;
+				top++;
+			}
+		v= stack [--top];
+		cout<<v << "-->";
+		k++;
+		visit[v]=0; 
+		visited[v]=1;
+	}
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
