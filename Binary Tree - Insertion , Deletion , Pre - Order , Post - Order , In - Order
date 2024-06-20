@@ -1,0 +1,237 @@
+ //Binary Tree -> INSERTION ,TRAVERSAL, PRE ORDER, POST ORDER, IN ORDER .
+// #include<iostream>
+// #include<queue>
+// using namespace std;
+
+// class node {
+// public:
+//     int data;
+//     node* left;
+//     node* right;
+//     node(int d) {
+//         this->data = d;
+//         this->left = NULL;
+//         this->right = NULL;
+//     }
+// };
+
+// node* insert_into_BST(node* &root, int d) {
+//     if (root == NULL) {
+//         root = new node(d);
+//     } else {
+//         if (d <= root->data) {
+//             root->left = insert_into_BST(root->left, d);
+//         } else {
+//             root->right = insert_into_BST(root->right, d);
+//         }
+//     }
+//     return root;
+// }
+
+// void LevelOrderTraversal(node* root) {
+//     if (root == NULL) return;
+//     queue<node*> q;
+//     q.push(root);
+//     while (!q.empty()) {
+//         node* temp = q.front();
+//         cout << temp->data << " ";
+//         q.pop();
+//         if (temp->left) {
+//             q.push(temp->left);
+//         }
+//         if (temp->right) {
+//             q.push(temp->right);
+//         }
+//     }
+// }
+
+// void take_input(node* &root) {
+//     int data;
+//     cin >> data;
+    
+//     while (data != -1) {
+//         insert_into_BST(root, data);
+//         cin >> data;
+//     }
+// }
+
+// void inorder(node* root) {
+//     if (root == NULL) return;
+//     inorder(root->left);
+//     cout << root->data << " ";
+//     inorder(root->right);
+// }
+
+// void preorder(node* root) {
+//     if (root == NULL) return;
+//     cout << root->data << " ";
+//     preorder(root->left);
+//     preorder(root->right);
+// }
+
+// void postorder(node* root) {
+//     if (root == NULL) return;
+//     postorder(root->left);
+//     postorder(root->right);
+//     cout << root->data << " ";
+// }
+
+// int main() {
+//     node* root = NULL;
+//     cout << "Enter the data into the BST:" << endl;
+//     take_input(root);
+    
+//     cout << "Level Order Traversal:" << endl;
+//     LevelOrderTraversal(root);
+    
+//     cout << "\nInorder Traversal:" << endl;
+//     inorder(root);
+    
+//     cout << "\nPreorder Traversal:" << endl;
+//     preorder(root);
+    
+//     cout << "\nPostorder Traversal:" << endl;
+//     postorder(root);
+    
+//     return 0;
+// }
+//**************************************************************************************
+//Binary Search Tree -> INSERTION ,TRAVERSAL, SEARCHING, IN-ORDER, PRE-ORDER, POST-ORDER.
+#include<iostream>
+#include<queue>
+using namespace std;
+class node{
+    public:
+    int data;
+    node*left;
+    node*right;
+    node(int d){
+        this->data=d;
+        this->left=NULL;
+        this->right=NULL;
+    }
+};
+bool search_in_BST(node* root, int key) {
+    if (root == NULL) {
+        return false; // Key not found
+    }
+    if (root->data == key) {
+        return true; // Key found
+    }
+    if (key < root->data) {
+        return search_in_BST(root->left, key);
+    } else {
+        return search_in_BST(root->right, key);
+    }
+}
+
+node* insert_into_BST(node* &root,int d){
+    if(root==NULL){
+        root=new node(d);
+    }
+    else{
+        if(d<root->data){
+            root->left=insert_into_BST(root->left,d);
+        }
+        if(d>root->data){
+            root->right=insert_into_BST(root->right,d);
+        }
+    }
+    return root;
+}
+void lot(node*root){
+    queue<node*>q;
+    q.push(root);
+    while(!q.empty()){
+        node*temp=q.front();
+        cout<<temp->data<<" ";
+        q.pop();
+        if(temp->left){
+            q.push(temp->left);
+        }
+        if(temp->right){
+            q.push(temp->right);
+        }
+    }
+}
+void take_input(node* &root){
+    int data;
+    cin>>data;
+    while(data!=-1){
+        insert_into_BST(root,data);
+        cin>>data;
+    }
+}
+void inorder(node* root) {
+    if (root == NULL) return;
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
+}
+
+void preorder(node* root) {
+    if (root == NULL) return;
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void postorder(node* root) {
+    if (root == NULL) return;
+    postorder(root->left);
+    postorder(root->right);
+    cout << root->data << " ";
+}
+
+int main(){
+    node* root = NULL;
+    //cout << "Enter the data into the BST:" << endl;
+     take_input(root);
+    
+    // cout << "Level Order Traversal:" << endl;
+   //  lot(root);
+    
+    // int key;
+    // cout << "\nEnter the key to search: ";
+    // cin >> key;
+    
+    // if (search_in_BST(root, key)) {
+    //     cout << "Key found in the BST." << endl;
+    // } else {
+    //     cout << "Key not found in the BST." << endl;
+    // }
+    
+   // cout << "\nInorder Traversal:" << endl;
+    inorder(root);
+    
+    // cout << "\nPreorder Traversal:" << endl;
+    // preorder(root);
+    
+    // cout << "\nPostorder Traversal:" << endl;
+    // postorder(root);
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
