@@ -1,0 +1,190 @@
+/*UNIT 2*/
+
+// pointer
+ //VOID POINTER = u have to typecast.**********************
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     void *vp;
+//     int a=5;
+//     float b= 1.11;
+//     char c = 'c';
+//     vp=&a;
+//     cout<<*(int*)vp<<endl;
+//     vp=&b;
+//     cout<<*(float*)vp<<endl;
+//     vp=&c;
+//     cout<<*(char*)vp<<endl;
+//     return 0;
+// }
+
+
+//POINTER ARITHEMATIC             **************************
+// #include<iostream>
+// using namespace std;
+// int main()
+// {
+// 	int arr[]={1,2,3,4,5,6,7,8,9};
+// 	int *p1,*p2;
+// 	int *x;
+// 	int a=2;
+// 	x=&a;
+// 	p1=arr;
+// 	cout<<*p1;
+// 	p2=p1+6;//Adding a constant to a pointer(Pointer will point to 7(array element))
+// 	cout<<*p2;
+//  	p2=p2-2;//Subtracting a constant from a pointer(Pointer will point to 5(array element))
+// 	cout<<p2-p1<<endl;//Subtracting two pointers(Returns 4(no. of elements)(Pointers pointing to the same array)
+// 	while(p1<=p2)
+// 	{
+
+// 		cout<<*p1<<endl;//Comparison of two pointers (Pointers pointing to the same array)
+// 		p1++;
+// 	}
+// 	cout<<x<<endl;
+// 	x++;//Incrementing pointer by 1--Pointer moved by 1
+// 	cout<<x<<endl;//It will give address of next location
+// 	return 0;
+// }
+
+
+
+// POINTER TO POINTER - YOUTUBE JENNY LCTURE   **************************
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a=10;
+//     int *p=&a;
+//     int **q=&p;
+//     int ***r=&q;
+//     cout<<a<<endl;
+//     cout<<*p<<endl;
+//     cout<<**q<<endl;
+//     cout<<***r<<endl;
+//     ***r=25;
+//     cout<<a;
+//     return 0;
+// }
+
+
+
+//DANGLING POINTER      ****************************
+// #include<iostream>
+// using namespace std;
+// int main()
+// {
+//   int *ptr;
+//   {
+//       int v=23;
+//       ptr = &v;
+//       cout<<"Value is(inside block):"<<*ptr<<"\n";
+//       cout<<"Address is(inside block):"<<ptr<<"\n";
+//   }
+//   // Here ptr is dangling pointer as v is no longer existing
+// cout<<"Value is(outside block):"<<*ptr<<"\n";
+// cout<<"Address is(outside block):"<<ptr;//ptr is dangling pointer(same address)
+//       ptr=NULL;//Solution to dangling pointer(assign null address)
+
+// }
+
+
+//Wild pointer     *************************
+// #include<iostream>
+// using namespace std;
+// int main()
+// {
+//     int *ptr;//Wild pointer(UN INIIALIZED)
+// //     cout<<ptr<<endl;//Gives garbage address value
+// // 	cout<<*ptr<<endl;//Not recommended
+// 	int a=10;
+// 	ptr=&a;//Now ptr is not a wild pointer
+// 	cout<<*ptr;
+// 	return 0;
+// }
+
+
+//NULL POINTER          ************************
+// #include<iostream>
+// using namespace std;
+// int main()
+// {
+// 	int *ptr=NULL;
+// 	int a=10;
+// 	cout<<ptr<<endl;
+// 	//cout<<*ptr;//---Not allowed(Dereferencing NULL pointer)
+// 	ptr=&a;
+// 	cout<<*ptr;//Now it is allowed, as NULL pointer has starting pointing somewhere
+// 	return 0;
+// }
+
+
+
+//CONSTANT POINTER             ***************************
+// #include<iostream>
+// using namespace std;
+// int main()
+// {
+// 	const int var1 = 60;
+// 	int var2 = 680;
+//     const int * ptr = &var1;
+//     ptr = &var2;//Error
+//     cout<<*ptr<<" ";
+//     ptr=*ptr+1;
+//     //  cout<<*ptr;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
