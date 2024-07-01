@@ -1,0 +1,211 @@
+//basic to class type(time)
+
+// #include<iostream>
+// using namespace std;
+// class Time{
+//     private:
+//     int h,m;
+//     public:
+//     Time(){
+//         h=m=0;
+//     }
+//     Time(int k){
+//         h=k/60;
+//         m=k%60;
+//     }
+//     void show(){
+//         cout<<"the time is "<<h<<" hours and "<<m<<" minutes ."<<endl;
+//     }
+// };
+// int main(){
+//     int min;
+//     cout<<"enter the minutes"<<endl;
+//     cin>>min;
+//     Time h;
+//     h=min;
+//     h.show();
+    
+//     return 0;
+// }
+//********************************************************************
+//Basic to class (distance)
+
+// #include<iostream>
+// using namespace std;
+// class distance1 {
+// private:
+//     int km, m;
+// public:
+//     distance1() {
+//         km = m = 0;
+//     }
+//     distance1(int k) {
+//         km = k / 1000;
+//         m = k % 1000;
+//     }
+//     void show() {
+//         cout << "The distance is " << km << " kilometers and " << m << " meters." << endl;
+//     }
+// };
+// int main() {
+//     int g;
+//     cout << "Enter distance in meters: " << endl;
+//     cin >> g;
+//     distance1 d1; // Pass the input value to the constructor
+//     d1=g;
+//     d1.show();
+//     return 0;
+// }
+//******************************************************************************
+// //Class to basic conversion is done with the help of operator function
+// #include<iostream>
+// using namespace std;
+// class Time
+// {
+// private:
+// int h,m;
+// public:
+// Time()
+// {
+// h=m=0;
+// }
+// void get_data()
+// {
+// cin>>h>>m;
+// }
+// operator int()
+// {
+// int t=h*60+m;
+// return t;
+// }
+// };
+// int main()
+// {
+// int min;
+// Time T1;
+// cout<<"\n Enter the number of hrs and mins";
+// T1.get_data();
+// min=T1;//(int)T1(internal representation)
+// cout<<"\n Total Minutes="<<min;
+// }
+//***************************************************************
+//Class to basic conversion is done with the help of operator function
+/*#include<iostream>
+using namespace std;
+class Distance1
+{
+private:
+int km,m;
+public:
+Distance1()
+{
+km=m=0;
+}
+void get_data()
+{
+cin>>km>>m;
+}
+operator int()
+{
+int d=km*1000+m;
+return d;
+}
+};
+int main()
+{
+int distance;
+Distance1 T1;
+cout<<"\n Enter the number of kilometers and metres";
+T1.get_data();
+distance=T1;//(int)T1
+cout<<"\n Total Distance="<<distance;
+}*/
+//**********************************************************************************************s
+/Single inheritance in public mode
+#include<iostream>
+#include<string.h>
+using namespace std;
+class student
+{
+private:
+int roll_no;
+protected:
+char section[10];
+public:
+void get_rno()
+{
+cout<<"\n Enter the roll number:";
+cin>>roll_no;
+}
+void show_rno()
+{
+cout<<"\n Roll no:"<<roll_no;
+}
+};
+class result:public student
+{
+private:
+float fees;
+public:
+void get_data()
+{
+get_rno();
+cout<<"\n Enter fees:";
+cin>>fees;
+cout<<"\n Enter section:";
+cin>>section;
+}
+void display()
+{
+show_rno();
+cout<<"\n Fees:"<<fees;
+cout<<"\n Section:"<<section;
+}
+} ;
+int main()
+{
+result obj1;
+obj1.get_data();
+obj1.display();
+/*obj1.get_rno();//Possible---Public
+obj1.show_rno();//Possible--Public
+strcpy(obj1.section,"K17TY");//Not Possible--Protected*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
