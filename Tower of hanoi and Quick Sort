@@ -1,0 +1,113 @@
+//tower of hanoi
+// #include<iostream>
+// #include<cmath>
+// using namespace std;
+// class toh{
+//     public:
+//     void tower_of_hanoi(int n, char source, char auxilary, char destination){
+//         if(n==1){
+//             cout<<"move disk "<<n<<"from "<<source<<" to "<<destination<<endl;
+//             return;
+//         }
+//         tower_of_hanoi(n-1, source, destination, auxilary);
+//         cout<<"move disk "<<n<<"from "<<source<<" to "<<destination<<endl;
+//         tower_of_hanoi(n-1, auxilary, source, destination);
+//     }
+// };
+// int main(){
+//     int n;
+//     cout<<"enter the number of disks:"<<endl;
+//     cin>>n;
+//  b   toh oj;
+//     obj.tower_of_hanoi(n,'A','B','C');
+//     cout<<"the moves required to move "<<n<<" disks are: "<<pow(2,n)-1<<endl;
+//     return 0;
+// }
+
+//******************************************************************************************
+//quick sort
+// #include<iostream>
+// #define MAX 5
+// using namespace std;
+// class QuickSort{
+//     public:
+//     int a[MAX];
+//     void input_array(){
+//         cout<<"enter th elements of the array:"<<endl;
+//         for(int i=0;i<MAX;i++){
+//             cin>>a[i];
+//         }
+//     }
+//     void display(){
+//         cout<<"the array is:"<<endl;
+//         for(int i=0;i<MAX;i++){
+//             cout<<a[i]<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     void swap(int &a,int &b){
+//         int temp;
+//         temp=a;
+//         a=b;
+//         b=temp;
+//     }
+//     int partition(int lb, int ub){
+//         int pivot=a[lb];
+//         int start=lb;
+//         int end=ub;
+//         while(start<end){
+//             while(a[start]<=pivot){
+//                 start++;
+//             }
+//             while(a[end]>pivot){
+//                 end--;
+//             }
+//             if(start<end){
+//                 swap(a[start],a[end]);
+//             }
+//         }
+//         swap(a[lb],a[end]);
+//         return end;
+//     }
+//     void quick_sort(int lb,int ub){
+//         if(lb<ub){
+//             int loc=partition(lb,ub);
+//             quick_sort(lb,loc-1);
+//             quick_sort(loc+1,ub);
+//         }
+//     }
+// };
+// int main(){
+//     QuickSort obj;
+//     obj.input_array();
+//     obj.display();
+//     obj.quick_sort(0,MAX-1);
+//     cout<<"array after quick sort is:"<<endl;
+//     obj.display();
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
